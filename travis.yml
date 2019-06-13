@@ -1,9 +1,5 @@
 language: java
 
-sudo: false
-
-jdk:
-- openjdk7
-
-install: tool/travis-install.sh
-script: cd RubberBandsApp; mvn test
+script:
+- mvn test
+- mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
